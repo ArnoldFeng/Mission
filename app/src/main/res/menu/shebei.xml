@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/one"
+        android:id="@+id/tongbu"
         android:icon="@drawable/tab"
         android:title="同步设备信息"
         app:showAsAction="never" />
 
-    <item android:id="@+id/two"
+    <item android:id="@+id/qingkong"
         android:icon="@drawable/tab"
         android:title="清空缓存"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/three"
+    <item android:id="@+id/saosao"
         android:icon="@drawable/tab"
         android:title="扫一扫"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/four"
+    <item android:id="@+id/chuangjian"
         android:icon="@drawable/tab"
         android:title="创建工作单"
         app:showAsAction="never"/>
