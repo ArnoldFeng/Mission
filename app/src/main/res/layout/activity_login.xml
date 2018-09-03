@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginBottom="0dp"
+    android:background="@drawable/bg_login"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="10dp">
+
+    <LinearLayout
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:layout_width="245dp"
+            android:layout_height="159dp"
+            android:layout_gravity="center"
+            android:background="@drawable/logonew" />
+    </LinearLayout>
+
+
+    <!--    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        android:paddingTop="50dp">-->
+
+
+    <LinearLayout
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/TV_Wel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="0dp"
+            android:cursorVisible="true"
+            android:text="运维管理"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp" />
+
+        <EditText
+            android:id="@+id/ET_User"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="用户"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:textColor="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/ET_Password"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_edittext"
+            android:hint="密码"
+            android:inputType="numberPassword"
+            android:paddingBottom="10dp"
+
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/BT_login"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_button"
+            android:text="立即登录"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/two"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/one"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:paddingLeft="60dp">
+
+        <TextView
+            android:id="@+id/TV_Pswfgt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:text="忘记密码？"
+            android:textColor="#FFFFFF" />
+
+        <View
+
+            android:layout_width="1dip"
+
+            android:layout_height="20dp"
+
+            android:layout_gravity="center_horizontal"
+
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/BT_Portset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="服务端口设置"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TV_resultmsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+    
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/two"
+        android:layout_centerInParent="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="北京和利时系统工程有限公司"
+        android:textColor="#FFFFFF" />
+
+
+</RelativeLayout>
+<!--</RelativeLayout>-->

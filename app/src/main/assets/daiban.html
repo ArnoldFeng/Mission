@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+ 
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/swiper.min.css'>  
+	  
+    <script src="js/jquery.1.11.1.js"></script>
+    <script src="js/swiper.min.js"></script>  
+    <script src="js/idangerous.swiper.min.js"></script> 
+	
+    <title>优惠促销</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="favor-header-bar">
+        <ul class="tabs">
+            <li class="default"><a href="javascript:void(0);" id="btn1" hidefocus="true">待办事项</a></li>
+            <li><a href="javascript:void(0);" id="btn2" hidefocus="true">通知<strong>·</strong>公告</a></li>
+        </ul>
+    </header>
+   <!-- slideTo tab -->
+   <div class="swiper-container favor-list">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="">
+                    
+                    <dl>
+                        <dt>
+                            <img src="images/pic1-favor.png">
+                            <span></span>
+                        </dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>                    
+                </a>
+                <a href="">
+                    <dl>
+                        <dt>
+                            <img src="images/pic1-favor.png">
+                        </dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="">
+                    <dl>
+                        <dt><img src="images/pic3-favor.png"></dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>                    
+                </a>
+                <a href="">
+                    <dl>
+                        <dt><img src="images/pic1-favor.png"></dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>
+                </a>
+            </div>
+            <div class="swiper-slide margin19">
+                <a href="">
+                    <dl>
+                        <dt>
+                            <img src="images/pic3-favor.png">
+                            <span></span>
+                        </dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>                    
+                </a>
+                <a href="">
+                    <dl>
+                        <dt>
+                            <img src="images/pic3-favor.png">
+                        </dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="">
+                    <dl>
+                        <dt><img src="images/pic3-favor.png"></dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕我们嗨起来自己都害怕我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>                    
+                </a>
+                <a href="">
+                    <dl>
+                        <dt><img src="images/pic3-favor.png"></dt>
+                        <dd>
+                            <h2>1G流量免费送</h2>
+                            <p>我们嗨起来自己都害怕</p>
+                            <small>活动截止到2016-07-01</small>
+                        </dd>
+                    </dl>
+                </a>
+            </div>
+
+        </div>
+   </div>
+   <script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoHeight: true,
+        onSlideChangeStart: function(){
+          $(".tabs .default").removeClass('default');
+          $(".tabs li").eq(mySwiper.activeIndex).addClass('default');
+        }
+    });
+     $(".tabs li").on('click',function(e){
+        e.preventDefault();
+        $(".tabs .default").removeClass('default');
+        $(this).addClass('default');
+        mySwiper.swipeTo($(this).index());
+      });
+      $(".tabs li").click(function(e){
+        e.preventDefault();
+      });
+
+    </script>
+</body>
+</html>
+

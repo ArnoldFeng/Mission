@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+  
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    
+    <style name="MyToolbarTheme" parent="AppTheme">
+        <item name="actionOverflowMenuStyle">@style/MyOverflowMenuStyle</item>
+        <item name="android:textColorSecondary">#FFFFFF</item><!--菜单项右边的三个点的颜色-->
+        <item name="android:colorBackground">#000000</item>
+        <item name="android:textColor">#FFFFFF</item>
+        
+    </style>
+    
+    <style name="MyOverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="android:overlapAnchor">false</item>
+        
+    </style>
+    
+</resources>
