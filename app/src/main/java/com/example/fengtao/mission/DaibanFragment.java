@@ -14,12 +14,10 @@ import com.example.fengtao.mission.database.MyDAOImpl;
 
 public class DaibanFragment extends Fragment {
     private WebView webView;
-
-    
     public void onCreate(Bundle savedInsatanceStated){
         super.onCreate(savedInsatanceStated);
-        
-        
+
+
     }
     @Nullable
     @Override
@@ -27,11 +25,11 @@ public class DaibanFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_daiban,container,false);
         return v;
     }
-    
     public void onActivityCreated(Bundle savedInstanceStated){
         super.onActivityCreated(savedInstanceStated);
         webView = (WebView)getActivity().findViewById(R.id.daibanWeb);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/daiban.html");
     }
+    //这是改变的内容
 }
