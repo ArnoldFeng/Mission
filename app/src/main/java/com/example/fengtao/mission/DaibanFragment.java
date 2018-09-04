@@ -30,5 +30,4 @@ public class DaibanFragment extends Fragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/daiban.html");
     }
-    //这是改变的内容
 }

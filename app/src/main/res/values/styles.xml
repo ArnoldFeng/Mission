@@ -7,6 +7,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
     
     <style name="MyToolbarTheme" parent="AppTheme">
@@ -20,6 +21,10 @@
     <style name="MyOverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
         <item name="android:overlapAnchor">false</item>
         
+    </style>
+    
+    <style name="CaptureToolbarTheme" parent="AppTheme">
+        <item name="android:fitsSystemWindows">true</item>
     </style>
     
 </resources>

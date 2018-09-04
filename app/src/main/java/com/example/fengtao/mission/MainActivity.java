@@ -1,6 +1,7 @@
 package com.example.fengtao.mission;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -80,6 +81,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         updateActionbarTitle("掌上运维");
         setItem(0);
         
+    }
+    
+    @Override
+    public void onActivityResult(int requestCode,int resultCode,Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
     }
     
     public void initView(){
