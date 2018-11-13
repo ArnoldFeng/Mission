@@ -12,13 +12,16 @@
         <activity android:name=".WelcomeActivity">
 
         </activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".MainActivity">
+
         </activity>
         <activity android:name=".SaosaoActivity">
             
@@ -26,6 +29,19 @@
         <activity android:name=".CaptureActivity">
             
         </activity>
+        <activity android:name=".ServesettingActivity">
+
+        </activity>
+        <provider 
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.fengtao.mission.fileprovider" 
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+            
+        </provider>
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

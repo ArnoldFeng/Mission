@@ -7,7 +7,6 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowTranslucentStatus">true</item>
     </style>
     
     <style name="MyToolbarTheme" parent="AppTheme">
@@ -15,7 +14,7 @@
         <item name="android:textColorSecondary">#FFFFFF</item><!--菜单项右边的三个点的颜色-->
         <item name="android:colorBackground">#000000</item>
         <item name="android:textColor">#FFFFFF</item>
-        
+        <item name="android:fitsSystemWindows">true</item>
     </style>
     
     <style name="MyOverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
@@ -25,6 +24,11 @@
     
     <style name="CaptureToolbarTheme" parent="AppTheme">
         <item name="android:fitsSystemWindows">true</item>
+    </style>
+    
+    <style name="ServeToolbarTheme" parent="AppTheme">
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:colorControlNormal">#fff</item>
     </style>
     
 </resources>

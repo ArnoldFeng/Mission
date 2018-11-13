@@ -1,6 +1,7 @@
 package com.example.fengtao.mission;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -21,6 +22,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -29,6 +31,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
+
+import com.example.fengtao.mission.database.MyDAOImpl;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,6 +44,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Handler handler = new Handler();
@@ -65,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     
     private int red = 0xFFFF6633;
     private int black = 0xFF000000;
+   // private MyDAOImpl my = new MyDAOImpl(this);
 
     
     @Override
@@ -86,7 +93,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onActivityResult(int requestCode,int resultCode,Intent data){
         super.onActivityResult(requestCode,resultCode,data);
+/*        switch (requestCode){
+            case Constant.REQ_QR_CODE:
+                if(resultCode == RESULT_OK){
+                    Bundle bundle = data.getExtras();
+                    String content = bundle.getString(Constant.INTENT_EXTRA_KEY_QR_SCAN);
+                    Log.d("Tag",content);
+                    Toast.makeText(this,content,Toast.LENGTH_LONG).show();
+                    my.insert(content);
+                    
+                }
+        }
+        //queryResult();*/
     }
+    
+/*    public void queryResult(){
+        List<Map<String,String>> list = my.query();
+        if(list.size()>0&&list!=null){
+            Map<String,String> map = list.get(0);
+            Toast.makeText(this,map.get("mapcontent"),Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(this,"查询失败",Toast.LENGTH_LONG).show();
+        }
+        //new AlertDialog.Builder(this).setTitle("扫描结果").setMessage(map.get("mapcontent")).show();
+    }*/
     
     public void initView(){
         frameLayout = (FrameLayout)this.findViewById(R.id.fragment_container);
@@ -215,6 +246,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void updateActionbarTitle(String title){
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
+        
+       // actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle(title);
         
     }

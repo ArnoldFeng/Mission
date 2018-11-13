@@ -5,12 +5,18 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundGray"
     android:orientation="vertical">
+
     <WebView
         android:id="@+id/testweb"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
     </WebView>
+
+    <ImageView
+        android:id="@+id/photoResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

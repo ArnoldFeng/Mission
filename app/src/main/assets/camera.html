@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.1.11.1.js" ></script>
+		<script>
+			function camera(){
+				window.baobao.takePhoto();
+			}
+			
+			function request(){
+                $.ajax({	
+                    url:'https://www.apiopen.top/femaleNameApi?page=1',
+                    cache:'false',
+                    type:'GET',
+                    dataType:'json',
+                    success:function(ajaxData){
+                        alert('成功');
+                        var ajaxDatastr = JSON.stringify(ajaxData)
+                        window.baobao.saveData(ajaxDatastr);
+                    },
+                    error:function(){
+                        alert('失败');
+                    }
+                });
+			}
+			
+			function query(){
+				window.baobao.queryData();
+			}
+			
+			function deletedata(){
+				window.baobao.deleteData();
+			}
+			
+			function showData(){
+				window.baobao.showDataInHtml();
+			}
+			
+			function showHtml(result){
+				
+				var resultArray = result.femalename;
+				for(var i in resultArray){
+					document.getElementById("one").innerHTML+=resultArray[i];
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<!--<input type="button" accept="image/*" type="file" value="opencamera"/>-->
+    <a onclick="camera()">点击拍照</a>
+	<br>
+	<a onclick="request()">点击ajax请求数据</a>
+	<br>
+	<a onclick="query()" >点击展示数据</a>
+	<br>
+	<a onclick="deletedata()">点击清空数据库</a>
+	<br>
+	<a onclick="showData()">展示数据库里的数据</a>
+	<div id="one">femalename</div>
+	</body>
+</html>

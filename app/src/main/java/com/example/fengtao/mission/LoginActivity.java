@@ -28,11 +28,13 @@ public class LoginActivity extends AppCompatActivity {
    private EditText et_password;
    private Button bt_login;
    private TextView tv_resultmsg;
+   private TextView tv_portset;
    private String name,password;
    private Handler handler = new Handler();
    private String resultMsg;
    private String token;
    private SharedPreferences sp;
+   
 
 
     @Override
@@ -55,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
                 }).start();
                 //tv_resultmsg.setText(resultmsg);
 
+            }
+        });
+        tv_portset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this,ServesettingActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -85,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
         et_password =(EditText)findViewById(R.id.ET_Password);
         bt_login = (Button)findViewById(R.id.BT_login);
         tv_resultmsg = (TextView)findViewById(R.id.TV_resultmsg);
+        tv_portset = (TextView)findViewById(R.id.BT_Portset);
     }
     
     private void login(String username,String password)  {
@@ -95,8 +105,9 @@ public class LoginActivity extends AppCompatActivity {
         Object.put("password",password);
         String jsonStr = Object.toString();//将json对象转换成json字符串
           
-        String loginUrl = "http://172.26.52.172:8081/rest/Token/Login";
-        //String loginUrl = "http://120.27.23.105/user/login";   
+        //String loginUrl = "http://172.26.52.172:8081/rest/Token/Login";
+        //String loginUrl = "http://120.27.23.105/user/login";
+          String loginUrl = "http://172.26.52.14:8070/rest/webapi/Login";
         URL url = new URL(loginUrl);
         HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
         urlConnection.setRequestMethod("POST");

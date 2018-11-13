@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.1.11.1.js" ></script>
+		<script>
+			function request(){
+			$.getJSON("http://www.runoob.com/try/ajax/jsonp.php?", "jsoncallback=?",function(data) {
+    				//var txt = JSON.parse(data);
+					//alert(txt[1]);
+					//console.log(typeof data[0]);
+					//console.log(data);
+					var dataStr = JSON.stringify(data);
+					window.baobao.saveData(dataStr);
+					
+				});
+			}
+		</script>
+	</head>
+	<body>
+
+   <a onclick="request()">ajax请求数据</a>
+	<p>lala</p>
+	</body>
+</html>

@@ -28,6 +28,8 @@ public class DaibanFragment extends Fragment {
         super.onActivityCreated(savedInstanceStated);
         webView = (WebView)getActivity().findViewById(R.id.daibanWeb);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("file:///android_asset/daiban.html");
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.loadUrl("file:///android_asset/newdaiban.html");
     }
 }

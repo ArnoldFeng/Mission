@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+ 
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/swiper.min.css'>  
+<!--      <link rel="stylesheet" type="text/css" href="css/sm.css">
+ -->    <link rel='stylesheet' href='css/smnew.css'>
+    <script src="js/swiper.min.js"></script>  
+    <script src="js/idangerous.swiper.min.js"></script> 
+	<script type="text/javascript" src="js/zepto.js"></script>
+    <script type="text/javascript" src="js/sm.js"></script>
+    <!-- <script type="text/javascript" src="js/addCard.js"></script> -->
+</head>
+<body>
+    <!-- header -->
+    <header class="favor-header-bar">
+        <ul class="tabs">
+            <li class="default"><a href="javascript:void(0);" id="btn1" hidefocus="true">待办事项</a></li>
+            <li><a href="javascript:void(0);" id="btn2" hidefocus="true">通知<strong>·</strong>公告</a></li>
+        </ul>
+    </header>
+   <!-- slideTo tab -->
+   <div class="swiper-container favor-list">
+          <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+            
+               <div id="page-ptr" class="page content pull-to-refresh-content" data-ptr-distance="55">
+                <!-- 默认的下拉刷新层 -->
+                 <div class="pull-to-refresh-layer">
+                    <!-- 加载提示符 -->
+                    <div class="preloader"></div>
+                     <!--箭头-->
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <!-- 下面是正文 -->
+                <div class="card-container">
+                     <div class="card">
+                      <div class="card-header">card</div>
+                      <div class="card-content">
+                         <div class="card-content-inner">
+                         这里是第1个card，下拉刷新会出现第2个card。
+                         </div>
+                      </div>
+                     </div>
+                </div>
+                </div>
+            
+        </div>
+
+
+
+
+            <div class="swiper-slide margin19">
+                <div id="page-ptr1" class="page content pull-to-refresh-content" data-ptr-distance="55">
+                    <!-- 默认的下拉刷新层 -->
+                    <div class="pull-to-refresh-layer">
+                        <!-- 加载提示符 -->
+                        <div class="preloader"></div>
+                        <!--箭头-->
+                        <div class="pull-to-refresh-arrow"></div>
+                    </div>
+                    <!-- 下面是正文 -->
+                    <div class="card-container">
+                        <div class="card">
+                            <div class="card-header">card</div>
+                            <div class="card-content">
+                                <div class="card-content-inner">
+                                    这里是第1个card，下拉刷新会出现第2个card。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+   </div>
+   <script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoHeight: true,
+        onSlideChangeStart: function(){
+          $(".tabs .default").removeClass('default');
+          $(".tabs li").eq(mySwiper.activeIndex).addClass('default');
+        }
+    });
+     $(".tabs li").on('click',function(e){
+        e.preventDefault();
+        $(".tabs .default").removeClass('default');
+        $(this).addClass('default');
+        mySwiper.swipeTo($(this).index());
+      });
+      $(".tabs li").click(function(e){
+        e.preventDefault();
+      });
+$(function(){
+     'use strict';
+   $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+    // 模拟2s的加载过程
+    setTimeout(function() {
+        var cardNumber = $(e.target).find('.card').length + 1;
+        var cardHTML = '<div class="card">' +
+                          '<div class="card-header">card'+cardNumber+'</div>' +
+                          '<div class="card-content">' +
+                            '<div class="card-content-inner">' +
+                                '这里是第' + cardNumber + '个card，下拉刷新会出现第' + (cardNumber + 1) + '个card。' +
+                            '</div>' +
+                          '</div>' +
+                      '</div>';
+
+        $(e.target).find('.card-container').prepend(cardHTML);
+        // 加载完毕需要重置
+       $.pullToRefreshTrigger('.page');
+        $.pullToRefreshDone('.pull-to-refresh-content');
+    }, 2000);
+});
+        $.init()//删去它卡片下拉不动
+  })
+    </script>
+</body>
+</html>
+
